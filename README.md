@@ -1,6 +1,6 @@
 # Artist page project
 
-![keyboard cat](https://media.giphy.com/media/SEO7ub2q1fORa/giphy.gif=500x300)
+![keyboard cat](https://media.giphy.com/media/SEO7ub2q1fORa/giphy.gif)
 
 ### Initial Ideas
 
