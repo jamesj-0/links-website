@@ -1,6 +1,6 @@
 # Artist page project
 
-![keyboard cat](https://media.giphy.com/media/SEO7ub2q1fORa/giphy.gif =500x300)
+![keyboard cat](https://media.giphy.com/media/SEO7ub2q1fORa/giphy.gif=500x300)
 
 ### Initial Ideas
 
@@ -18,6 +18,6 @@
 
 ### Prototypes / Initial sketches
 
-![Prototype 1](https://i.imgur.com/qFQEyVr.png =400x400)
+![Prototype 1](https://i.imgur.com/qFQEyVr.png=400x400)
 
-![Prototype 2](https://i.imgur.com/PvNtzvt.png =400x400)
+![Prototype 2](https://i.imgur.com/PvNtzvt.png=400x400)
