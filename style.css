@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.lander {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  margin: 3rem 3rem 0rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__image {
+  align-self: center;
+  width: 100px;
+  height: 100px;
+}
+
+.header__title {
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.6;
+}
+
+.links__button {
+  background-color: pink;
+  width: 55%;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.45rem;
+  cursor: pointer;
+}
+
+.form {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1.5rem 2rem 1.5rem;
+}
+
+.form__submit {
+  align-self: center;
+}
+
+/* contact us  */
+
+.contact__form {
+  position: relative;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+input,
+textarea {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  margin-top: 1rem;
+}
+
+.form__details {
+  float: left;
+  width: 80%;
+}
+
+.close {
+  color: hsl(0, 0%, 40%);
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.form__header {
+  letter-spacing: 0.3rem;
+  color: hsl(0, 0%, 40%);
+  font-weight: 60;
+}
+
+.form__submit {
+  border: 1px solid hsl(218, 97%, 52%);
+  color: hsl(218, 97%, 52%);
+  padding: 0.5rem 1rem;
+  width: 7rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 1.5s ease-out;
+}
+
+.form__submit:hover,
+.contact-us__button:hover {
+  background-color: hsl(218, 97%, 52%);
+  color: white;
+}
+
+.contact__button {
+  background-color: white;
+  border: 1px solid hsl(218, 97%, 52%);
+  color: hsl(218, 97%, 52%);
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  height: 3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  display: flex;
+  transition: background-color 1.5s ease-out;
+}
+
+.contact__container {
+  position: relative;
+  display: flex;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+.contact {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  z-index: 11;
+}
+
+.form__submit-message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  z-index: 12;
+  background-color: white;
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  color: hsl(0, 0%, 40%);
+  font-weight: 60;
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
