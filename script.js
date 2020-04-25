@@ -1,114 +1,79 @@
 const linksSection = document.querySelector('.links')
-const contactButton = document.getElementById('contact__button')
-const contactUs = document.getElementsByClassName('contact')[0]
-const container = document.getElementsByClassName('contact__container')[0]
-const closeButton = document.getElementById('close')
-const allInput = document.querySelectorAll('input')
-const submitButton = document.querySelector('.form__submit')
-const submitResult = document.querySelector('.form__submit-message')
 
-let linksArr = [
+import { calcMargin } from './calcMargin.js'
+
+import { linkListeners } from './linklisteners.js'
+
+const linksArr = [
   {
     link: 'url.com',
-    title: 'Boiler Room',
+    title: 'Spotify Artist Page',
     index: '1',
+    emoji: '📀',
+    description: 'spotify',
   },
   {
     link: 'url.com',
-    title: 'Mixes',
+    title: 'Recent Releases',
     index: '2',
+    emoji: '🆕',
+    description: 'releases',
   },
   {
     link: 'url.com',
-    title: 'Mixes',
+    title: 'Rinse FM W/ Soundbwoy Killah',
     index: '2',
+    emoji: '🍻',
+    description: 'soundcloud',
   },
   {
     link: 'url.com',
-    title: 'Mixes',
+    title: 'NTS W/ Alexander Nut',
     index: '2',
-  },
-  {
-    link: 'url.com',
-    title: 'Mixes',
-    index: '2',
-  },
-  {
-    link: 'url.com',
-    title: 'Mixes',
-    index: '2',
+    emoji: '🤩',
+    description: 'mixcloud',
   },
 ]
 
-linksArr.map(item => {
-  const newLinkItem = document.createElement('a')
-  newLinkItem.textContent = item.title
-  newLinkItem.href = item.link
-  newLinkItem.style.webkitOrder = item.index
-  newLinkItem.className = `links__button item-${item.index}`
-  newLinkItem.style.padding = `0.9rem`
-  newLinkItem.style.margin = calcMargin(linksArr)
-  linksSection.appendChild(newLinkItem)
-})
-
-function calcMargin(arr) {
-  let margin = 0
-  switch (arr.length) {
-    case 1:
-      margin = '1.9rem'
-      break
-    case 2:
-      margin = '1rem'
-      break
-    case 3:
-      margin = '0.9rem'
-      break
-    case 4:
-      margin = '0.7rem'
-      break
-    case 5:
-      margin = '0.7rem'
-      break
-    case 6:
-      margin = '0.4rem'
-      break
-  }
-  return margin
+const artistDataArr = {
+  artistName: 'Holloway',
+  artistHandle: '@Holl0way',
+  artistImgLink:
+    'https://scontent-lht6-1.cdninstagram.com/v/t51.2885-15/e35/70238457_2394358824214652_4721427382088362653_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_cat=108&_nc_ohc=UpBeK0SNgREAX87qhdC&oh=0d64f79219cb947643c794bee9c56e48&oe=5ECDC01C',
 }
 
-contactButton.onclick = () => {
-  formAppear()
+function loadHeader(artist) {
+  const header = document.querySelector('.header')
+  const artistImg = document.createElement('img')
+  artistImg.src = artist.artistImgLink
+  artistImg.className = 'header__image'
+  const artistTitle = document.createElement('h1')
+  artistTitle.className = 'header__title'
+  artistTitle.textContent = artist.artistName
+  const artistHandle = document.createElement('h2')
+  artistHandle.className = 'header__handle'
+  artistHandle.textContent = artist.artistHandle
+  header.appendChild(artistImg)
+  header.appendChild(artistTitle)
+  header.appendChild(artistHandle)
 }
 
-submitButton.onclick = e => {
-  for (let i = 0; i < allInput.length; i++) {
-    if (allInput[i].value !== '') {
-      e.preventDefault()
-      submitResult.style.display = 'flex'
-      setTimeout(() => {
-        submitResult.style.display = 'none'
-        formDisappear()
-      }, 2000)
-    }
-  }
+function loadButtons(links) {
+  links.map((item) => {
+    const newLinkItem = document.createElement('a')
+    newLinkItem.textContent = item.emoji
+      ? item.emoji + ' ' + item.title + ' ' + item.emoji
+      : item.title
+    newLinkItem.href = item.link
+    newLinkItem.style.webkitOrder = item.index
+    newLinkItem.className = `links__button item-${item.index}`
+    newLinkItem.setAttribute('id', `${item.description}`)
+    newLinkItem.style.padding = `0.9rem`
+    newLinkItem.style.margin = calcMargin(linksArr)
+    linksSection.appendChild(newLinkItem)
+  })
 }
 
-closeButton.onclick = () => {
-  formDisappear()
-}
-
-document.onclick = event => {
-  if (event.target == container) {
-    formDisappear()
-  }
-}
-
-function formAppear() {
-  contactUs.style.display = 'flex'
-  contactButton.style.display = 'none'
-}
-
-function formDisappear() {
-  contactUs.style.display = 'none'
-  contactButton.style.display = 'flex'
-}
+loadButtons(linksArr)
+loadHeader(artistDataArr)
+linkListeners()

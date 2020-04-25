@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/1287f6fd49.js"
@@ -12,91 +16,10 @@
   </head>
   <body>
     <section class="lander">
-      <header class="header">
-        <img
-          class="header__image"
-          src="https://images.unsplash.com/photo-1585986872366-fb2b814f1975?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
-        />
-        <h1 class="header__title">Artist Name</h1>
-      </header>
+      <header class="header"></header>
       <div class="links"></div>
     </section>
-    <button class="contact__button" id="contact__button">
-      Contact Me
-    </button>
-    <section class="contact contact__container">
-        <form class="contact__form">
-          <span class="close" id="close">&times;</span>
-          <header>
-            <h2 class="form__header">Let's collaborate!</h1>
-          </header>
-          <div class="form__details">
-            <label>
-              Name*
-              <input
-                type="text"
-                name="name"
-                label="Your Name"
-                placeholder="Full Name"
-                required
-              />
-            </label>
-            <br />
-          </div>
-          <div class="form__details">
-            <label>
-              Email*
-              <input
-                type="email"
-                name="email"
-                label="Your Email"
-                placeholder="Email"
-                required
-              />
-            </label>
-            <br />
-          </div>
-          <div class="form__details">
-            <label>
-              Phone*
-              <input
-                type="tel"
-                name="tel"
-                placeholder="Phone Number"
-                required
-              />
-            </label>
-            <br />
-          </div>
-          <div class="form__details">
-            <label>
-              Company*
-              <input
-                type="text"
-                name="company"
-                placeholder="Company Name"
-                required
-              />
-            </label>
-            <br />
-          </div>
-          <div class="form__details">
-            <label>
-              Message
-              <textarea
-                name="message"
-                placeholder="Send us a message!"
-                rows="1"
-              ></textarea>
-            </label>
-            <br />
-          </div>
-          <button type="submit" class="form__submit">Submit</button>
-          <div class="form__submit-message">Thanks!</div>
-        </form>
-    </section>
-    <footer class="footer">
-    </footer>
+    <footer class="footer"></footer>
   </body>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
 </html>
