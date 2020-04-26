@@ -21,14 +21,14 @@ const linksArr = [
   },
   {
     link: 'url.com',
-    title: 'Rinse FM W/ Soundbwoy Killah',
+    title: 'Rinse FM Appearances',
     index: '2',
     emoji: '🍻',
     description: 'soundcloud',
   },
   {
     link: 'url.com',
-    title: 'NTS W/ Alexander Nut',
+    title: 'NTS',
     index: '2',
     emoji: '🤩',
     description: 'mixcloud',
