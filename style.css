@@ -48,8 +48,11 @@
 .link__wrapper {
   width: 88%;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: center;
+  align-items: center;
   height: auto;
+  text-align: center;
 }
 
 .links__button {
