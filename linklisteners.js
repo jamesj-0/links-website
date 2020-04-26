@@ -12,7 +12,8 @@ function linkListeners() {
 function widget(item) {
   var para = document.createElement('P') // Create a <p> node
   var t = document.createTextNode(`${item.id}`) // Create a text node
-  para.appendChild(t) // Append the text to <p>
+  para.appendChild(t)
+  console.log(item)
   document.getElementById(`${item.id}`).appendChild(para) // Append <p> to <div> with id="myDIV"
 }
 

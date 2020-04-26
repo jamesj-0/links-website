@@ -45,10 +45,16 @@
   align-items: center;
 }
 
+.link__wrapper {
+  width: 88%;
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
 .links__button {
   width: 88%;
   color: black;
-  border-color: pink;
   text-align: center;
   text-decoration: none;
   display: inline-block;

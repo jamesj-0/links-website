@@ -60,17 +60,22 @@ function loadHeader(artist) {
 
 function loadButtons(links) {
   links.map((item) => {
+    const newLinkItemWrapper = document.createElement('div')
+    newLinkItemWrapper.className = `link__wrapper item-${item.index}`
+    newLinkItemWrapper.setAttribute('id', `${item.description}`)
+
     const newLinkItem = document.createElement('a')
     newLinkItem.textContent = item.emoji
-      ? item.emoji + ' ' + item.title + ' ' + item.emoji
+      ? item.emoji + '' + item.title + ' ' + item.emoji
       : item.title
     newLinkItem.href = item.link
     newLinkItem.style.webkitOrder = item.index
-    newLinkItem.className = `links__button item-${item.index}`
+    newLinkItem.className = `links__button`
     newLinkItem.setAttribute('id', `${item.description}`)
     newLinkItem.style.padding = `0.9rem`
     newLinkItem.style.margin = calcMargin(linksArr)
-    linksSection.appendChild(newLinkItem)
+    newLinkItemWrapper.appendChild(newLinkItem)
+    linksSection.appendChild(newLinkItemWrapper)
   })
 }
 
