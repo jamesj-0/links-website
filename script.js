@@ -82,3 +82,5 @@ function loadButtons(links) {
 loadButtons(linksArr)
 loadHeader(artistDataArr)
 linkListeners()
+document.querySelector("#spotify-widget").style.transform = 'translateY(-20.6rem)';
+
