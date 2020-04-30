@@ -22,14 +22,14 @@ const linksArr = [
   {
     link: 'url.com',
     title: 'Rinse FM Appearances',
-    index: '2',
+    index: '3',
     emoji: '🍻',
     description: 'soundcloud',
   },
   {
     link: 'url.com',
     title: 'NTS',
-    index: '2',
+    index: '4',
     emoji: '🤩',
     description: 'mixcloud',
   },

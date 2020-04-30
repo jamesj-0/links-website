@@ -1,21 +1,47 @@
 let testBool = false
 
-function linkListeners() {
-  const links = Array.from(document.querySelectorAll('.links__button'))
-  links.map((item) => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault()
-      testBool = !testBool
-      testBool ? addWidget(item) : removeWidget(item)
-    })
+function transformItems(arr,distance){
+  arr.map(e => {
+    e.style.transform = `translateY(${distance}%)`;
+    e.style.transition = "transform 0.5s 0.1s";
   })
 }
 
-function removeWidget(item) {
-  let nodelist = document.querySelectorAll(`#${item.id}`)
-  for (let i = 2; i < nodelist.length; i++) {
-    nodelist[i].remove()
+function wasClicked(domElement, bool){
+  let distance = 0;
+  bool? distance=100 : distance=0; 
+
+  const allLinks = Array.from(document.querySelectorAll('.link__wrapper')) 
+
+  switch (domElement.path[1]) {
+    case allLinks[0]:
+    transformItems(allLinks,distance)
+    break
+    case allLinks[1]:
+    allLinks.splice(0,1);
+    transformItems(allLinks,distance)
+    break
+    case allLinks[2]:
+    allLinks.splice(0,2);
+    transformItems(allLinks,distance)
+    break
+    case allLinks[3]:
+    allLinks.splice(0,3);
+    transformItems(allLinks,distance)
+    break
   }
+}
+
+function linkListeners() {
+  const links = Array.from(document.querySelectorAll('.links__button'))
+  links.map((item) => {
+    addWidget(item);
+    item.addEventListener('click', (e) => {
+      e.preventDefault()
+      testBool = !testBool
+      wasClicked(e, testBool)
+    })
+  })
 }
 
 function addWidget(item) {
