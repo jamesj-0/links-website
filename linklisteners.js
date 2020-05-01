@@ -1,31 +1,50 @@
 let testBool = false
 
-function transformItems(arr,distance,str){
-  if(str == 'spotify'){
+function transformItems(arr,distance,str, bool){
+  switch(str){
+    case 'spotify':
     arr.splice(0,1);
-    const widget = document.querySelector("#spotify-widget")
-    widget.style.transform = `translateY(0%)`;
-    widget.transition = "transform 0.5s 0.1s";
-  }
-  arr.map(e => {
-    e.style.transform = `translateY(${distance}%)`;
-    e.style.transition = "transform 0.5s 0.1s";
-  })
+    let spotifyWidget = document.querySelector("#spotify-widget")
+    arr.map(e => {
+      bool? distance=0 : distance='-15rem'; 
+      e.style.transform = `translateY(${distance})`;
+      e.style.transition = "transform 0.4s 0.1s";
+    })
+    bool? distance=0 : distance='-20.6rem'; 
+    spotifyWidget.style.transform = `translateY(${distance})`;
+    spotifyWidget.style.transition = "transform 0.4s 0.1s";
+    break
+    case 'releases':
+      console.log("releases")
+      arr.splice(0,1);
+      let releasesWidget = Array.from(document.querySelectorAll('#releases-widget'))
+      arr.map(e => {
+        bool? distance=0 : distance='-20.6rem'; 
+        e.style.transform = `translateY(${distance})`;
+        e.style.transition = "transform 0.4s 0.1s"
+      })
+      bool? distance=0 : distance='-24.1rem'; 
+      releasesWidget.map(e => {
+        e.style.transform = `translateY(${distance})`
+        e.style.transition = "transform 0.4s 0.1s";
+      });
+  break
+  
+}
 }
 
 function wasClicked(domElement, bool){
   let distance = 0;
-  bool? distance=100 : distance=0; 
-
+  
   const allLinks = Array.from(document.querySelectorAll('.link__wrapper')) 
 
   switch (domElement.path[1]) {
     case allLinks[0]:
-    transformItems(allLinks,distance,'spotify')
+    transformItems(allLinks,distance,'spotify', bool)
     break
     case allLinks[1]:
     allLinks.splice(0,1);
-    transformItems(allLinks,distance,'releases')
+    transformItems(allLinks,distance,'releases', bool)
     break
     case allLinks[2]:
     allLinks.splice(0,2);
@@ -60,7 +79,6 @@ function addWidget(item) {
         .createContextualFragment(
           `<iframe  style="border: 0; width: 88%; height: 250px;" id="${item.id}-widget" src='https://embed.spotify.com/?uri=spotify:artist:2OBZ4TbehlTMKtLmpBpKnq' frameborder='0' allowtransparency='true'></iframe>`,
         )
-        positionOffset = -100;
       break
     case 'releases':
       widget = document.createRange().createContextualFragment(

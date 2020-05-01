@@ -82,5 +82,8 @@ function loadButtons(links) {
 loadButtons(linksArr)
 loadHeader(artistDataArr)
 linkListeners()
-document.querySelector("#spotify-widget").style.transform = 'translateY(-20.6rem)';
 
+
+document.querySelector("#spotify-widget").style.transform = 'translateY(-20.6rem)';
+document.querySelector("#releases").style.transform = 'translateY(-15.6rem)';
+Array.from(document.querySelectorAll('#releases-widget')).map(e => e.style.transform = 'translateY(-24.1rem');
