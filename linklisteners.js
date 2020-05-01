@@ -1,28 +1,53 @@
 let testBool = false
+const globalTransform = 'transform 0.4s 0.1s'
 
 function transformItems(arr,distance,str, bool){
   switch(str){
     case 'spotify':
     arr.splice(0,1);
     let spotifyWidget = document.querySelector("#spotify-widget")
-    arr.map(e => {
-      bool? distance=0 : distance='-15rem'; 
-      e.style.transform = `translateY(${distance})`;
-      e.style.transition = "transform 0.4s 0.1s";
-    })
+    for(let i=0; i< arr.length; i++){
+      switch(i){
+        case 0: 
+        bool? distance=0 : distance='-15.6rem'; 
+        arr[i].style.transform = `translateY(${distance})`;
+        arr[i].style.transition = globalTransform;
+          break
+        case 1:
+        bool? distance='-20.6rem' : distance='-36.2rem'; 
+        arr[i].style.transform = `translateY(${distance})`;
+        arr[i].style.transition = globalTransform;
+          break
+        case 2: 
+        bool? distance='-24.9rem' : distance='-40.6rem'; 
+        arr[i].style.transform = `translateY(${distance})`;
+        arr[i].style.transition = globalTransform;
+          console.log(arr[i])
+          break
+      }
+    }
     bool? distance=0 : distance='-20.6rem'; 
     spotifyWidget.style.transform = `translateY(${distance})`;
-    spotifyWidget.style.transition = "transform 0.4s 0.1s";
+    spotifyWidget.style.transition = globalTransform;
     break
     case 'releases':
       console.log("releases")
       arr.splice(0,1);
       let releasesWidget = Array.from(document.querySelectorAll('#releases-widget'))
-      arr.map(e => {
-        bool? distance=0 : distance='-20.6rem'; 
-        e.style.transform = `translateY(${distance})`;
-        e.style.transition = "transform 0.4s 0.1s"
-      })
+      for(let i=0; i< arr.length; i++){
+        switch(i){
+          case 0: 
+          bool? distance='-16rem' : distance='-36.2rem'; 
+          arr[i].style.transform = `translateY(${distance})`;
+          arr[i].style.transition = globalTransform;
+            break
+          case 1:
+          bool? distance='-20.6rem' : distance='-40.6rem'; 
+          arr[i].style.transform = `translateY(${distance})`;
+          arr[i].style.transition = globalTransform;
+            break
+        }
+      }
       bool? distance=0 : distance='-24.1rem'; 
       releasesWidget.map(e => {
         e.style.transform = `translateY(${distance})`
@@ -32,11 +57,15 @@ function transformItems(arr,distance,str, bool){
   case 'soundcloud':
       arr.splice(0,1);
       let soundCloudWidget = Array.from(document.querySelectorAll('#soundcloud-widget'))
-      arr.map(e => {
-        bool? distance=0 : distance='-20.6rem'; 
-        e.style.transform = `translateY(${distance})`;
-        e.style.transition = "transform 0.4s 0.1s"
-      })
+      for(let i=0; i< arr.length; i++){
+        switch(i){
+          case 0: 
+          bool? distance='-35.2rem' : distance='-40.6rem'; 
+          arr[i].style.transform = `translateY(${distance})`;
+          arr[i].style.transition = globalTransform;
+            break
+        }
+      }
       bool? distance=0 : distance='-9.5rem'; 
       soundCloudWidget.map(e => {
         console.log(e)
