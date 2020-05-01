@@ -29,6 +29,20 @@ function transformItems(arr,distance,str, bool){
         e.style.transition = "transform 0.4s 0.1s";
       });
   break
+  case 'soundcloud':
+      arr.splice(0,1);
+      let soundCloudWidget = Array.from(document.querySelectorAll('#soundcloud-widget'))
+      arr.map(e => {
+        bool? distance=0 : distance='-20.6rem'; 
+        e.style.transform = `translateY(${distance})`;
+        e.style.transition = "transform 0.4s 0.1s"
+      })
+      bool? distance=0 : distance='-9.5rem'; 
+      soundCloudWidget.map(e => {
+        console.log(e)
+        e.style.transform = `translateY(${distance})`
+        e.style.transition = "transform 0.4s 0.1s";
+      });
   
 }
 }
@@ -48,7 +62,7 @@ function wasClicked(domElement, bool){
     break
     case allLinks[2]:
     allLinks.splice(0,2);
-    transformItems(allLinks,distance,'soundcloud')
+    transformItems(allLinks,distance,'soundcloud', bool)
     break
     case allLinks[3]:
     allLinks.splice(0,3);
@@ -88,16 +102,16 @@ function addWidget(item) {
       break
     case 'soundcloud':
       widget = document.createRange().createContextualFragment(
-        `<iframe class=SCwidget "${item.id}-widget" width="78%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/718251409&color=%23645c54&inverse=false&auto_play=false&show_user=true"></iframe><div id=${item.id} style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/rinsefm" target="_blank" style="color: #cccccc; text-decoration: none;"></a><a href="https://soundcloud.com/rinsefm/soundbwoykillah251119" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>
-          <iframe class=SCwidget "${item.id}-widget" width="78%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/698705842&color=%23645c54&inverse=false&auto_play=false&show_user=true"></iframe><div id=${item.id} style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/rinsefm" target="_blank" style="color: #cccccc; text-decoration: none;"></a><a href="https://soundcloud.com/rinsefm/allcentre181019" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>
+        `<iframe class= S-widget id="${item.id}-widget" width="78%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/718251409&color=%23645c54&inverse=false&auto_play=false&show_user=true"></iframe><div id=${item.id} style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/rinsefm" target="_blank" style="color: #cccccc; text-decoration: none;"></a><a href="https://soundcloud.com/rinsefm/soundbwoykillah251119" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>
+          <iframe class= S-widget id="${item.id}-widget" width="78%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/698705842&color=%23645c54&inverse=false&auto_play=false&show_user=true"></iframe><div id=${item.id} style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/rinsefm" target="_blank" style="color: #cccccc; text-decoration: none;"></a><a href="https://soundcloud.com/rinsefm/allcentre181019" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>
           `,
       )
       break
     case 'mixcloud':
       widget = document.createRange().createContextualFragment(
-        `<iframe width="88%" class=SCwidget "${item.id}-widget" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FNTSRadio%2Ffrom-the-depths-w-holloway-6th-march-2020%2F" frameborder="0" ></iframe>
-          <iframe width="88%" class=SCwidget "${item.id}-widget" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FNTSRadio%2Falexander-nut-19th-november-2019%2F" frameborder="0" ></iframe>
-          <iframe width="88%" class=SCwidget "${item.id}-widget" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FNTSRadio%2Ffauzia-19th-july-2019%2F" frameborder="0" ></iframe>`,
+        `<iframe width="88%" class=mix-widget id="${item.id}-widget" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FNTSRadio%2Ffrom-the-depths-w-holloway-6th-march-2020%2F" frameborder="0" ></iframe>
+          <iframe width="88%" class=mix-widget id="${item.id}-widget" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FNTSRadio%2Falexander-nut-19th-november-2019%2F" frameborder="0" ></iframe>
+          <iframe width="88%" class=mix-widget id="${item.id}-widget" height="60" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=%2FNTSRadio%2Ffauzia-19th-july-2019%2F" frameborder="0" ></iframe>`,
       )
   }
   document.getElementById(`${item.id}`).appendChild(widget)
