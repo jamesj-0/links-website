@@ -21,15 +21,15 @@ const linksArr = [
   },
   {
     link: 'url.com',
-    title: 'Rinse FM W/ Soundbwoy Killah',
-    index: '2',
+    title: 'Rinse FM Appearances',
+    index: '3',
     emoji: '🍻',
     description: 'soundcloud',
   },
   {
     link: 'url.com',
-    title: 'NTS W/ Alexander Nut',
-    index: '2',
+    title: 'NTS',
+    index: '4',
     emoji: '🤩',
     description: 'mixcloud',
   },
@@ -60,20 +60,35 @@ function loadHeader(artist) {
 
 function loadButtons(links) {
   links.map((item) => {
+    const newLinkItemWrapper = document.createElement('div')
+    newLinkItemWrapper.className = `link__wrapper item-${item.index}`
+    newLinkItemWrapper.setAttribute('id', `${item.description}`)
+
     const newLinkItem = document.createElement('a')
     newLinkItem.textContent = item.emoji
-      ? item.emoji + ' ' + item.title + ' ' + item.emoji
+      ? item.emoji + '' + item.title + ' ' + item.emoji
       : item.title
     newLinkItem.href = item.link
     newLinkItem.style.webkitOrder = item.index
-    newLinkItem.className = `links__button item-${item.index}`
+    newLinkItem.className = `links__button`
     newLinkItem.setAttribute('id', `${item.description}`)
     newLinkItem.style.padding = `0.9rem`
     newLinkItem.style.margin = calcMargin(linksArr)
-    linksSection.appendChild(newLinkItem)
+    newLinkItemWrapper.appendChild(newLinkItem)
+    linksSection.appendChild(newLinkItemWrapper)
   })
 }
 
 loadButtons(linksArr)
 loadHeader(artistDataArr)
 linkListeners()
+
+
+document.querySelector("#spotify-widget").style.transform = 'translateY(-20.6rem)';
+document.querySelector("#releases").style.transform = 'translateY(-15.6rem)';
+document.querySelector("#soundcloud").style.transform = 'translateY(-36.2rem)';
+document.querySelector("#mixcloud").style.transform = 'translateY(-40.6rem)';
+
+Array.from(document.querySelectorAll('#releases-widget')).map(e => e.style.transform = 'translateY(-24.1rem)');
+Array.from(document.querySelectorAll('#soundcloud-widget')).map(e => e.style.transform = 'translateY(-9.5rem)');
+Array.from(document.querySelectorAll('#mixcloud-widget')).map(e => e.style.transform = 'translateY(-16.3rem)');

@@ -7,7 +7,7 @@
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
 }
 
 .header {
@@ -45,10 +45,22 @@
   align-items: center;
 }
 
+.link__wrapper {
+  overflow: hidden;
+  width: 88%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  text-align: center;
+}
+
 .links__button {
+  background-color: white;
+  z-index: 1;
   width: 88%;
   color: black;
-  border-color: pink;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -58,6 +70,14 @@
   border-bottom: 1px solid #333333;
   border-left: 1px solid #cccccc;
 }
+.widget {
+  margin: 0rem 1rem 1.5rem 1rem;
+}
+
+.S-widget {
+  margin: 1rem 1rem 0rem 1rem;
+}
+
 .link-icon {
   padding-left: 0.5rem;
 }
