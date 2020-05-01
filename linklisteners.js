@@ -43,6 +43,17 @@ function transformItems(arr,distance,str, bool){
         e.style.transform = `translateY(${distance})`
         e.style.transition = "transform 0.4s 0.1s";
       });
+      break
+  case 'mixcloud':
+      arr.splice(0,1);
+      let mixCloudWidget = Array.from(document.querySelectorAll('#mixcloud-widget'))
+      bool? distance=0 : distance='-16.3rem'; 
+      mixCloudWidget.map(e => {
+        console.log(e)
+        e.style.transform = `translateY(${distance})`
+        e.style.transition = "transform 0.4s 0.1s";
+      });
+      break
   
 }
 }
@@ -66,7 +77,7 @@ function wasClicked(domElement, bool){
     break
     case allLinks[3]:
     allLinks.splice(0,3);
-    transformItems(allLinks,distance,'mixcloud')
+    transformItems(allLinks,distance,'mixcloud', bool)
     break
   }
 }

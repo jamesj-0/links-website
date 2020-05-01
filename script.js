@@ -87,7 +87,8 @@ linkListeners()
 document.querySelector("#spotify-widget").style.transform = 'translateY(-20.6rem)';
 document.querySelector("#releases").style.transform = 'translateY(-15.6rem)';
 document.querySelector("#soundcloud").style.transform = 'translateY(-36.2rem)';
-document.querySelector("#soundcloud").style.transform = 'translateY(-36.2rem)';
+document.querySelector("#mixcloud").style.transform = 'translateY(-40.6rem)';
 
 Array.from(document.querySelectorAll('#releases-widget')).map(e => e.style.transform = 'translateY(-24.1rem)');
 Array.from(document.querySelectorAll('#soundcloud-widget')).map(e => e.style.transform = 'translateY(-9.5rem)');
+Array.from(document.querySelectorAll('#mixcloud-widget')).map(e => e.style.transform = 'translateY(-16.3rem)');
